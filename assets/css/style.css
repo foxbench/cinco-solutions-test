@@ -9,6 +9,7 @@ div {
 }
 
 .wrapper {
+    padding: 0 20px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -22,6 +23,7 @@ div {
 .entry .image {
     float: left;
     width: 30%;
+    text-align: center;
 }
 
 .entry .image img {
@@ -33,6 +35,12 @@ div {
     padding-left: 10px;
     width: 70%;
     float: right;
+}
+
+.entry .description p {
+    text-align: justify;
+    margin: 15px 0;
+    padding: 0;
 }
 
 .entry .keys .key {
@@ -60,4 +68,32 @@ div {
 }
 
 
+@media only screen and (max-width: 767px) {
+    .entry .image, .entry .description {
+        width: 100%;
+    }
+
+    .entry .description {
+        padding-left: 0px;
+    }
+
+    .entry .keys .key {
+        width: 100%;
+        background-color: transparent;
+        margin: 10px 0;
+        padding: 0px;
+
+    }
+
+    .entry .keys .key:nth-child(2n+1) {
+        margin-right: 0px;
+    }
+
+    .entry .keys .key .key-text, .entry .keys .key .value-text{
+        display: block;
+        float: none;
+        padding-bottom: 5px;
+    }
+
+}
 
