@@ -33,7 +33,6 @@ function movie_search($name) {
 
     $movie = json_decode($response, true);
 
-
     if(empty($movie) || $movie['Response'] == "False") {
         return [];
     }
@@ -44,4 +43,13 @@ function movie_search($name) {
 function show_404() {
     include('404.php');
     exit;
+}
+
+
+function load_header($title) {
+    include('templates/header.php');
+}
+
+function load_footer() {
+    include('templates/footer.php');
 }

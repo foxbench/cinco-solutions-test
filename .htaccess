@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^movie/(.*)$ movie_search.php?movie_name=$1 [L]
+RewriteRule ^f1/(.*)$ f1_driver.php?driver=$1 [L]
