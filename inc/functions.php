@@ -13,7 +13,32 @@ function f1_search($name)
     if(!empty($filtered_drivers))
         return reset($filtered_drivers);
 
-    return false;
+    return [];
+}
+
+function movie_search($name) {
+
+    $name = strtolower($name);
+
+    $api_url = "http://www.omdbapi.com/?plot=full&apikey=631cf985&t=" . $name;
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $api_url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    $movie = json_decode($response, true);
+
+
+    if(empty($movie) || $movie['Response'] == "False") {
+        return [];
+    }
+
+    return $movie;
 }
 
 function show_404() {

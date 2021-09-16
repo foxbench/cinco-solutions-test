@@ -11,7 +11,7 @@ div {
 .wrapper {
     padding: 0 20px;
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
 }
 
 .clear {
@@ -29,6 +29,8 @@ div {
 .entry .image img {
     max-width: 100%;
     height: auto;
+    max-height: 500px;
+    width: auto;
 }
 
 .entry .description {
