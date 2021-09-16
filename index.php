@@ -1,3 +1,7 @@
+<?php
+require_once 'load.php';
+print_r(f1_search('lewis'));
+?>
 <!doctype html>
 <html lang="en">
 <head>
